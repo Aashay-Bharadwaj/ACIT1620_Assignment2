@@ -1,0 +1,88 @@
+function renderCreate() {
+  
+    let createImg = document.createElement("img");
+    let createDiv = document.createElement("div");
+    let createDivChild = document.createElement("div");
+    let createI = document.createElement("input");
+    let createB = document.createElement("button");
+    let createF = document.createElement("form");
+    document.querySelector('.contactedit').appendChild(createDiv);
+    createDiv.setAttribute('class','contactimg');
+    createDiv.appendChild(createImg).setAttribute('src','./img/profile.jpg');
+    createImg.setAttribute('class', 'profilepic');
+    createImg.setAttribute('alt', 'Profile Picture');
+    // Create Form element
+    document.querySelector('.contactedit').appendChild(createDiv);
+    createDiv.setAttribute('class', 'form');
+    createDiv.appendChild(createF);
+    // Create form div child elements
+    createF.append(createDivChild)
+    createDivChild.setAttribute('class','inputcontainer');
+    createDivChild.appendChild(createI).setAttribute('type', 'text');
+    createI.setAttribute('id', 'contactname');
+    createI.setAttribute('name', 'contactname');
+    createI.setAttribute('placeholder', 'Contact Name');
+    createDivChild.appendChild(createB).setAttribute('class', 'extrafield');
+    createB.setAttribute('id', 'extranamefield');
+    createB.setAttribute('name', 'extranamefield');
+    createB.innerText= '+'
+    //createF.appendChild(documentFragment)
+    cloneDiv = createDivChild.cloneNode()
+    cloneI = createI.cloneNode()
+    cloneB = createB.cloneNode()
+    createF.appendChild(cloneDiv)
+    cloneDiv.setAttribute('class','inputcontainer');
+    cloneDiv.appendChild(cloneI).setAttribute('type', 'tel');
+    cloneI.setAttribute('id', 'contactphone');
+    cloneI.setAttribute('name', 'contactphone');
+    cloneI.setAttribute('placeholder', 'Contact Phone');
+    cloneDiv.appendChild(cloneB).setAttribute('class', 'extrafield');
+    cloneB.setAttribute('id', 'extraphonefield');
+    cloneB.setAttribute('name', 'extraphonefield');
+    cloneB.innerText= '+'
+
+    cloneDiv = cloneDiv.cloneNode()
+    cloneI = cloneI.cloneNode()
+    cloneB = cloneB.cloneNode()
+    createF.appendChild(cloneDiv)
+    cloneDiv.setAttribute('class','inputcontainer');
+    cloneDiv.appendChild(cloneI).setAttribute('type', 'text');
+    cloneI.setAttribute('id', 'contactaddress');
+    cloneI.setAttribute('name', 'contactaddress');
+    cloneI.setAttribute('placeholder', 'Contact Address');
+    cloneDiv.appendChild(cloneB).setAttribute('class', 'extrafield');
+    cloneB.setAttribute('id', 'extraaddressfield');
+    cloneB.setAttribute('name', 'extraaddressfield');
+    cloneB.innerText= '+'
+
+
+    cloneDiv = cloneDiv.cloneNode()
+    cloneI = cloneI.cloneNode()
+    cloneB = cloneB.cloneNode()
+    createF.appendChild(cloneDiv)
+    cloneDiv.setAttribute('class','inputcontainer');
+    cloneDiv.appendChild(cloneI).setAttribute('type', 'email');
+    cloneI.setAttribute('id', 'contactemail');
+    cloneI.setAttribute('name', 'contactemail');
+    cloneI.setAttribute('placeholder', 'Contact Email');
+    cloneDiv.appendChild(cloneB).setAttribute('class', 'extrafield');
+    cloneB.setAttribute('id', 'extraemailfield');
+    cloneB.setAttribute('name', 'extraemailfield');
+    cloneB.innerText= '+'
+
+    cloneDiv = cloneDiv.cloneNode()
+    cloneI = cloneI.cloneNode()
+    cloneB = cloneB.cloneNode()
+    createF.appendChild(cloneDiv)
+    cloneDiv.setAttribute('class','buttons');
+    cloneDiv.appendChild(cloneB).setAttribute('type', 'submit');
+    cloneB.setAttribute('class', 'button save');
+    cloneB.setAttribute('id', 'savecontact');
+    cloneB.setAttribute('name', 'savecontact');
+    cloneB.innerText= 'Save Contact'
+    cloneB = cloneB.cloneNode()
+    cloneDiv.appendChild(cloneB).setAttribute('type', 'reset');
+    cloneB.setAttribute('class', 'button cancel');
+    cloneB.setAttribute('id', 'cancel');
+    cloneB.setAttribute('name', 'cancel');
+    cloneB.innerText= 'Cancel'
