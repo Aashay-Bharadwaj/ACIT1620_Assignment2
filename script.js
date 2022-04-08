@@ -28,14 +28,26 @@ function cleanUpIndex() {
   })
 }
 
+
 function createSingleIndex(){
   let createLink = document.createElement("a");
   let createDiv = document.createElement("div");
   let createP = document.createElement("p");
-
   document.querySelector('.main').appendChild(createLink)
-  createLink.setAttribute('herf','page3.html')
+  createLink.setAttribute('href','page3.html')
   createLink.appendChild(createDiv).setAttribute('class','contact');
   document.querySelector('.contact').appendChild(createP);
   createP.innerText = contactList[0].name;
+}
+
+function renderIndex(CList){
+	for(i = 0; i< CList.length; i++){
+		let createLink = document.createElement("a");
+		let createDiv = document.createElement("div");
+		document.querySelector(".main").appendChild(createLink);
+		createLink.setAttribute("href","page3.html");
+		createLink.appendChild(createDiv).setAttribute("class","contact");
+    const divs = document.querySelectorAll(".contact");
+    divs[i].appendChild(createP).innerText = CList[i].name;
+  }
 }
