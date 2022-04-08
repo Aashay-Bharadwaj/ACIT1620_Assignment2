@@ -69,3 +69,7 @@ function renderView(contactList) {
   
   contactInfo.appendChild(clone_view);
 }
+function renderCreate() {
+  let list = document.querySelector(".main")
+  list.appendChild(clone)
+}
