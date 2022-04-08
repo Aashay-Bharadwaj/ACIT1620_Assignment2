@@ -101,13 +101,75 @@ function renderView(Clist){
 
 //Create function 1
 function cleanUpCreate() {
-  let createContact = document.querySelector(".contactedit");
-  globalThis.clone = createContact.cloneNode(true);
-  createContact.parentNode.removeChild(createContact);
+  var createContact = document.querySelector(".contactedit");
+  while (createContact.firstChild) {
+      createContact.removeChild(createContact.firstChild);
+  }
 }
 
 //Create function 2
-function renderCreate() {
-  let main = document.querySelector(".main")
-  main.appendChild(clone)
+function renderCreate(){
+  //button setup
+  let buttonidArray = ['extranamefield','extraphonefield','extraaddressfield','extraemailfield'];
+  //input tag set up
+  let inputattribute = ['type','id','name','placeholder'];
+  let inputtypeArray = ['text','tel','text','email'];
+  let attributeidArray = ['contactname','contactphone','contactaddress','contactemail'];
+  let inputPlaceholderArray = ['Contact Name','Contact Phone','Contact Address','Contact Email'];
+  var Layer1 = document.querySelector(".contactedit");
+  //<div class = contactimg></div>
+  Layer1.appendChild(document.createElement("div")).setAttribute('class','contactimg');
+  //<img src="./img/profile.jpg" class ="profilepic" alt="Profile picture">
+  document.querySelector(".contactimg").appendChild(document.createElement("img")).setAttribute('src','./img/profile.jpg');
+  document.querySelector("img").setAttribute('class','profilepic');
+  document.querySelector(".profilepic").setAttribute('alt','Profile picture')
+  //<div class="form">
+  Layer1.appendChild(document.createElement("div")).setAttribute('class','form');
+  document.querySelector('.form').appendChild(document.createElement("form"));
+  for(i=0; i<4;i++){
+    document.querySelector('form').appendChild(document.createElement("div")).setAttribute('class','inputcontainer');
+   }  
+  let subelement = document.querySelectorAll('.inputcontainer'); 
+  for(i=0;i<subelement.length;i++){
+    subelement[i].appendChild(document.createElement("input"));
+    subelement[i].appendChild(document.createElement("button")).innerText = '+';
+  }
+  let subinput = document.querySelectorAll('input');
+
+  for(y=0;y<inputattribute.length;y++){
+    if(inputattribute[y]=='type'){
+      for(q=0;q<inputtypeArray.length;q++){subinput[q].setAttribute(inputattribute[y],inputtypeArray[q]);}
+    }
+    if(inputattribute[y]=='id'){
+      for(q=0;q<inputtypeArray.length;q++){subinput[q].setAttribute(inputattribute[y],attributeidArray[q]);}
+    }
+    if(inputattribute[y]=='name'){
+      for(q=0;q<inputtypeArray.length;q++){subinput[q].setAttribute(inputattribute[y],attributeidArray[q]);}
+    }
+    if(inputattribute[y]=='placeholder'){
+      for(q=0;q<inputtypeArray.length;q++){subinput[q].setAttribute(inputattribute[y],inputPlaceholderArray[q]);}
+    }
+  }
+  let subbutton = document.querySelectorAll('button');
+  for(i=0 ;i<subbutton.length;i++){ 
+    subbutton[i].setAttribute('class','extrafield');
+  } 
+  let buttoncalss = document.querySelectorAll('.extrafield')
+  for(i=0 ;i<subbutton.length;i++){
+    buttoncalss[i].setAttribute('id',buttonidArray[i]);
+    buttoncalss[i].setAttribute('name',buttonidArray[i]);
+  }
+  document.querySelector('form').appendChild(document.createElement("div")).setAttribute('class','buttons');
+  document.querySelector('.buttons').appendChild(document.createElement('button')).innerText = 'Save Contact';
+  document.querySelector('.buttons').appendChild(document.createElement('button')).innerText = 'Cancel';
+  var L1 = document.querySelector('.buttons');
+  var L2 = L1.getElementsByTagName('button');
+  L2[0].setAttribute('type','submit');
+  L2[0].setAttribute('class','button save');
+  L2[0].setAttribute('id','savecontact');
+  L2[0].setAttribute('name','savecontact');
+  L2[1].setAttribute('type','reset');
+  L2[1].setAttribute('class','button cancel');
+  L2[1].setAttribute('id','cancel');
+  L2[1].setAttribute('name','cancel');
 }
