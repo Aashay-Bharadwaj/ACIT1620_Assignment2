@@ -4,7 +4,7 @@ Uruha Rushia Members:
 Jacky Hsu
 Darren Cheng
 Amanda Chang
-Simon freeman
+Simon Freeman
 Luca Visintin
 Byeongju Kang
 Aashay Bharadwaj
