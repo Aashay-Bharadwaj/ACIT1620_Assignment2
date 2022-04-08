@@ -27,3 +27,15 @@ function cleanUpIndex() {
     item.remove();
   })
 }
+
+function createSingleIndex(){
+  let createLink = document.createElement("a");
+  let createDiv = document.createElement("div");
+  let createP = document.createElement("p");
+
+  document.querySelector('.main').appendChild(createLink)
+  createLink.setAttribute('herf','page3.html')
+  createLink.appendChild(createDiv).setAttribute('class','contact');
+  document.querySelector('.contact').appendChild(createP);
+  createP.innerText = contactList[0].name;
+}
