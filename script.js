@@ -51,3 +51,13 @@ function renderIndex(CList){
     divs[i].appendChild(createP).innerText = CList[i].name;
   }
 }
+
+function renderView(contactList) {
+  let contactInfo = document.querySelector(".contactinfo");
+  clone_view.querySelector(".contactname").firstChild.data = contactList.name;
+  clone_view.querySelector(".contactemail").innerText = "email: " + contactList.email;
+  clone_view.querySelector(".contactphone").innerText = "cell: " + contactList.phone;
+  clone_view.querySelector(".contactaddress").innerText = "address: " + contactList.address;
+  
+  contactInfo.appendChild(clone_view);
+}
