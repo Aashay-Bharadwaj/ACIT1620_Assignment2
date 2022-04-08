@@ -52,6 +52,14 @@ function renderIndex(CList){
   }
 }
 
+function cleanUpView() {
+  let contactView = document.querySelector(".contactinfo");
+  globalThis.clone_view = contactView.cloneNode(true);
+  while (contactView.firstChild) {
+    contactView.removeChild(contactView.firstChild)
+  }
+}
+
 function renderView(contactList) {
   let contactInfo = document.querySelector(".contactinfo");
   clone_view.querySelector(".contactname").firstChild.data = contactList.name;
