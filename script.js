@@ -41,3 +41,73 @@ function createSingleIndex(){
   createP.innerText = contactList[0].name;
 
 }
+
+//Index function 3
+function renderIndex(CList){
+  for(i = 0; i< contactList.length; i++){
+      let createLink = document.createElement("a");
+      let createDiv = document.createElement("div");
+      document.querySelector('.main').appendChild(createLink);
+      createLink.setAttribute('href','page3.html');
+      createLink.appendChild(createDiv).setAttribute('class','contact');
+  const divs = document.querySelectorAll('.contact');
+  divs[i].innerText = CList[i].name;
+  }
+}
+
+//View function 1
+function cleanUpView() {
+  var contactView = document.querySelector(".contactinfo");
+  while (contactView.firstChild) {
+  contactView.removeChild(contactView.firstChild)
+  }
+}
+
+//View function 2
+function renderView(Clist){
+  let qselct = document.querySelector('.contactinfo');
+  for(i=0;i<5;i++){
+    qselct.appendChild(document.createElement('div'));
+  }
+  let classList = ['contactname','contactemail','contactphone','contactaddress','buttons'];
+  let childDivs = qselct.getElementsByTagName('div');
+  let keylist = Object.keys(Clist);
+  let valuelist = Object.values(Clist)
+  childDivs[0].innerText = keylist[0] +': '+ valuelist[0];
+  childDivs[1].innerText = keylist[3] +': '+ valuelist[3];
+  childDivs[2].innerText = 'cell: '+ valuelist[1];
+  childDivs[3].innerText = keylist[2] +': '+ valuelist[2];
+  for(i=0; i<5; i++){
+    childDivs[i].setAttribute('class',classList[i])
+  }
+  document.querySelector('.'+classList[0]).innerText = Clist.name;
+  document.querySelector('.'+classList[0]).appendChild(document.createElement('img'));
+  let selectImg = document.querySelector('.'+classList[0]).getElementsByTagName('img');
+  selectImg[0].setAttribute('src','./img/profile.jpg');
+  selectImg[0].setAttribute('class','profilepic');
+  selectImg[0].setAttribute('alt','Profile picture');
+  for(i=0; i <2;i++ ){
+  document.querySelector('.buttons').appendChild(document.createElement('button'));
+  }
+  let childButton = document.querySelector('.'+classList[4]).getElementsByTagName('button');
+  let buttonClass = ['button edit','button close'];
+  let buttonValue = ['Edit','Close']
+  for(i=0;i<2;i++){
+    childButton[i].setAttribute('class',buttonClass[i]);
+    childButton[i].setAttribute('value',buttonValue[i])
+    childButton[i].innerText = buttonValue[i];
+  }
+}
+
+//Create function 1
+function cleanUpCreate() {
+  let createContact = document.querySelector(".contactedit");
+  globalThis.clone = createContact.cloneNode(true);
+  createContact.parentNode.removeChild(createContact);
+}
+
+//Create function 2
+function renderCreate() {
+  let main = document.querySelector(".main")
+  main.appendChild(clone)
+}
