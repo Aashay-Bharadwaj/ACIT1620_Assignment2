@@ -21,3 +21,9 @@ let contactList = [
 ]
 
 
+function cleanUpIndex() {
+  let contactClass = document.querySelectorAll(".contact");
+  contactClass.forEach(item => {
+    item.remove();
+  })
+}
