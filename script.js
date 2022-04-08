@@ -23,7 +23,21 @@ let contactList = [
 //Index function 1
 function cleanUpindex() {
 var contactList = document.querySelector(".main");
-while (contactList.firstChild) {
-    contactList.removeChild(contactList.firstChild);
+  while (contactList.firstChild) {
+      contactList.removeChild(contactList.firstChild);
+  }
 }
+
+//Index funtion 2
+function createSingleIndex(){
+  let createLink = document.createElement("a");
+  let createDiv = document.createElement("div");
+  let createP = document.createElement("p");
+
+  document.querySelector('.main').appendChild(createLink)
+  createLink.setAttribute('href','page3.html')
+  createLink.appendChild(createDiv).setAttribute('class','contact');
+  document.querySelector('.contact').appendChild(createP);
+  createP.innerText = contactList[0].name;
+
 }
