@@ -69,6 +69,13 @@ function renderView(contactList) {
   
   contactInfo.appendChild(clone_view);
 }
+
+function cleanUpCreate() {
+  let createContact = document.querySelector(".contactedit");
+  globalThis.clone = createContact.cloneNode(true);
+  createContact.parentNode.removeChild(createContact);
+}
+
 function renderCreate() {
   let list = document.querySelector(".main")
   list.appendChild(clone)
